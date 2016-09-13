@@ -1,0 +1,20 @@
+{% extends '::layout/layoutAdmin.html.twig' %}
+{% form_theme form 'bootstrap_3_layout.html.twig' %}
+{% block body -%}
+
+    <h2>création d'un nouveau contenu</h2>
+    <div class="span9">
+        {{ form(form) }}
+
+    </div>
+
+<div class="span12">
+        <ul class="record_actions list-unstyled">
+    <li>
+        <a href="{{ path('adminPages') }}" class="btn btn-default">
+            Retour à la liste
+        </a>
+    </li>
+</ul>
+    </div>
+{% endblock %}

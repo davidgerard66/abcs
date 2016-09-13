@@ -1,0 +1,36 @@
+{% extends '::layout/layoutAdmin.html.twig' %}
+
+{% block body -%}
+    <h1>Contenu modifiable</h1>
+
+    <table class="record_properties">
+        <tbody>
+            <tr>
+                <th>Id</th>
+                <td>{{ entity.id }}</td>
+            </tr>
+            <tr>
+                <th>Titre</th>
+                <td>{{ entity.titre }}</td>
+            </tr>
+            <tr>
+                <th>Contenu</th>
+                <td>{{ entity.contenu }}</td>
+            </tr>
+        </tbody>
+    </table>
+
+        <ul class="record_actions list-unstyled list-inline" >
+    <li>
+        <a href="{{ path('adminPages') }}" class="btn btn-success">
+            retour au menu
+        </a>
+    </li>
+    <li>
+        <a href="{{ path('adminPages_edit', { 'id': entity.id }) }}" class="btn btn-info">
+            Modifier
+        </a>
+    </li>
+    <li>{{ form(delete_form) }}</li>
+</ul>
+{% endblock %}

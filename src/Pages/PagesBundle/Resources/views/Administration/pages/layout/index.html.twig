@@ -1,0 +1,47 @@
+{% extends '::layout/layoutAdmin.html.twig' %}
+
+{% block body -%}
+    <h1>ABCS > Contenus modifiables</h1>
+
+    <table class="table table-striped table-hover">
+        <thead>
+            <tr>
+                <th>Id</th>
+                <th>Genre</th>
+                <th>Titre</th>
+                <th>Grand Titre</th>
+                <th>Langue</th>
+                <th>Ordre</th>
+
+            </tr>
+        </thead>
+        <tbody>
+        {% for entity in entities %}
+            <tr>
+                <td>{{ entity.id }}</td>
+
+                <td>{{ entity.genre}}</td>
+                <td><a href="{{ path('adminPages_edit', { 'id': entity.id }) }}">{{ entity.titre }}</a></td>
+                <td>{{ entity.grandtitre}}</td>
+                <td>{{ entity.langue}}</td>
+                <td>{{ entity.ordre}}</td>
+                <td>
+
+                        <a href="{{ path('adminPages_show', { 'id': entity.id }) }}"><i class="icon-eye-open"></i></a>
+
+                        <a href="{{ path('adminPages_edit', { 'id': entity.id }) }}"><i class="icon-edit"></i></a>
+
+                </td>
+            </tr>
+        {% endfor %}
+        </tbody>
+    </table>
+
+        <ul>
+        <li>
+            <a href="{{ path('adminPages_new') }}">
+                Créer un nouveau contenu
+            </a>
+        </li>
+    </ul>
+    {% endblock %}

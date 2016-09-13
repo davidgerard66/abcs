@@ -1,0 +1,23 @@
+{% extends '::layout/layoutAdmin.html.twig' %}
+{% form_theme edit_form 'bootstrap_3_layout.html.twig' %}
+{% block body -%}
+
+    <h2>Edition du contenu</h2>
+    <div class="span10">
+        {{ form(edit_form) }}
+
+    </div>
+
+
+<div class="span4">
+    <ul class="record_actions list-unstyled list-inline">
+        <li>
+            <a href="{{ path('adminPages') }}" class="btn btn-default">
+                Retour à la liste
+            </a>
+        </li>
+        <li>{{ form(delete_form) }}</li>
+    </ul>
+</div>
+
+{% endblock %}

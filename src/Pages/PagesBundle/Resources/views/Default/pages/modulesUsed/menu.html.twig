@@ -1,0 +1,4 @@
+{% for page in pages %}
+<li style="margin-left:0px;margin-right:0px;font-size:14px;"> <a style='font-size:14px;' href="{{ path("pages",{'locale':page.langue,'slug' : page.slug}) }}"> {{ page.titre }}</a> </li>
+{% endfor %}
+
