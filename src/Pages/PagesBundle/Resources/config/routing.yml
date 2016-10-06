@@ -6,6 +6,9 @@ pages:
     pattern:  /page/{locale}/{slug}
     defaults: { _controller: PagesBundle:Pages:page }
 
+contact:
+    pattern:  /contact/{locale}
+    defaults: { _controller: PagesBundle:Pages:contact }
 home:
     pattern:  /page/{locale}/
     defaults: { _controller: PagesBundle:Pages:home }

@@ -9,7 +9,7 @@ use Symfony\Component\Debug\Debug;
 
 // This check prevents access to debug front controllers that are deployed by accident to production servers.
 // Feel free to remove this, extend it, or make something more sophisticated.
-if (isset($_SERVER['HTTP_CLIENT_IP'] || 1==1)
+if (isset($_SERVER['HTTP_CLIENT_IP'] )
     || isset($_SERVER['HTTP_X_FORWARDED_FOR'])
     || !in_array(@$_SERVER['REMOTE_ADDR'], array('127.0.0.1','http://cluster006.ovh.net','http://entreprendre-en-espagne.com','193.248.134.93', 'fe80::1', '::1'))
 ) {
