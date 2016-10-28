@@ -70,7 +70,6 @@ class Media
      * @ORM\Column(type="string", length=255, nullable=true)
      */
     public $path;
-
     public function getAbsolutePath()
     {
         return null === $this->path
