@@ -9,7 +9,7 @@
 
 
                 <th>Nom</th>
-                <th>Photo</th>
+                <th>Document pdf</th>
                 <th>Ordre</th>
                 <th>Actions</th>
             </tr>
@@ -18,9 +18,8 @@
         {% for entity in entities %}
             <tr>
 
-                <td>n° {{ entity.id }} </td>
-                <td>{{ entity.name }}</td>
-                <td><img src='{{ pathDefault ~ entity.getWebPath }}' width="60"></td>
+                <td>{{ entity.name }} </td>
+                <td><a href='{{ pathDefault ~ entity.getWebPath }}' target="_blank">Télécharger</a></td>
                 <td>{{ entity.ordre }}</td>
                 <td>
 

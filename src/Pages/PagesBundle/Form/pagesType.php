@@ -15,6 +15,7 @@ class pagesType extends AbstractType
     public function buildForm(FormBuilderInterface $builder, array $options)
     {
         $builder
+            ->add('actif',null, array('label' =>'ce contenu est actif '))
             ->add('titre')
             ->add('grandtitre')
             ->add('genre', 'choice', array(

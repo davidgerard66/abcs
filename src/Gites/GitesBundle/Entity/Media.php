@@ -45,11 +45,7 @@ class Media
      */
     private $updated;
 
-    /**
-     * @ORM\ManyToOne(targetEntity="Gites\GitesBundle\Entity\Gites", cascade={"persist"})
-     * @ORM\JoinColumn(nullable=false)
-     */
-    private $gite;
+
 
 
     /**
@@ -100,7 +96,7 @@ class Media
     {
         // get rid of the __DIR__ so it doesn't screw up
         // when displaying uploaded doc/image in the view.
-        return 'photos/gite '.$this->getGite();
+        return 'documents';
     }
 
 

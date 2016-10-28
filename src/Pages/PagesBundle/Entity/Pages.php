@@ -99,6 +99,12 @@ class Pages
 
 
     /**
+     * @ORM\Column(name="actif", type="boolean", options={"default":true})
+     *
+     */
+    private $actif;
+
+    /**
      * @ORM\Column(name="showslides", type="boolean", options={"default":true})
      *
      */
@@ -284,6 +290,29 @@ class Pages
     public function setshowSlides($showSlides)
     {
         $this->showSlides = $showSlides;
+
+        return $this;
+    }
+
+    /**
+     * Get actif
+     *
+     * @return boolean
+     */
+    public function getActif()
+    {
+        return $this->actif;
+    }
+
+    /**
+     * Set actif
+     *
+     * @param boolean actif
+     * @return Pages
+     */
+    public function setActif($actif)
+    {
+        $this->actif = $actif;
 
         return $this;
     }

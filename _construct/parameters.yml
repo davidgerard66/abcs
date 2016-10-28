@@ -1,0 +1,24 @@
+# This file is auto-generated during the composer install
+parameters:
+    database_driver: pdo_mysql
+    database_host: entreprefqabcs.mysql.db
+    database_port: null
+    database_name: entreprefqabcs
+    database_user: entreprefqabcs
+    database_password: Txds4946aaa
+    mailer_transport: mail
+    mailer_host: smtp.gmail.com
+    mailer_auth_mode: login
+    mailer_user: david.gerard.mail@gmail.com
+    mailer_password: Txds4946aaa66
+    mailer_encryption: ssl
+    mailer_port: 465
+    locale: fr
+    secret: ThisTokenIsNotSoSecretChangeIt
+twig:
+    globals:
+        telephone: '04 68 89 18 51'
+        fax: '04 68 89 18 52'
+        adresseSociete: 'SARL dd  - 5 impasse Joan Sebastia Pons - 66690 st andre'
+        pathDefault: 'http://www.entreprendre-en-espagne.com/'
+        PhotoDir: /documents

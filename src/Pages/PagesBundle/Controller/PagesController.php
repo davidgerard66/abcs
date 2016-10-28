@@ -11,22 +11,22 @@ class PagesController extends Controller
     {
         $em = $this->getDoctrine()->getManager();
         $pages = $em->getRepository('PagesBundle:Pages')->findBy(
-            array('genre'=> 'Page'),
+            array('genre'=> 'Page', 'actif'=>true),
             array('ordre' => 'ASC')
         );
 
-        return $this->render('PagesBundle:Default:pages/modulesUsed/menu.html.twig',array('pages'=>$pages));
+        return $this->render('PagesBundle:Default:Pages/modulesUsed/menu.html.twig',array('pages'=>$pages));
     }
 
     public function pageAction($locale,$slug)
     {
         $em = $this->getDoctrine()->getManager();
-        $page = $em->getRepository('PagesBundle:Pages')->findOneBy(array('slug'=>$slug)); // ou findonebyslug
-        $slides = $em->getRepository('PagesBundle:Pages')->findBy(array('genre'=>'Slide', 'langue'=>$locale)); // ou findonebyslug
+        $page = $em->getRepository('PagesBundle:Pages')->findOneBy(array('slug'=>$slug,'actif'=>true)); // ou findonebyslug
+        $slides = $em->getRepository('PagesBundle:Pages')->findBy(array('genre'=>'Slide','actif'=>true, 'langue'=>$locale)); // ou findonebyslug
 
         if (!$page) throw $this->createNotFoundException('la page n\'�xiste pas');
 
-        return $this->render('PagesBundle:Default:pages/layout/pages.html.twig',array('page'=>$page,'slides'=>$slides) );
+        return $this->render('PagesBundle:Default:Pages/layout/pages.html.twig',array('page'=>$page,'slides'=>$slides) );
     }
 
     public function contactAction($locale)
@@ -82,22 +82,22 @@ class PagesController extends Controller
         //return $this->redirect($this->generateUrl('adminPages', array('locale' => 'fr')));
 
         $em = $this->getDoctrine()->getManager();
-        $page = $em->getRepository('PagesBundle:Pages')->findOneBy(array('genre'=>'Page','ordre'=>1));
-        $slides = $em->getRepository('PagesBundle:Pages')->findBy(array('genre'=>'Slide'));
+        $page = $em->getRepository('PagesBundle:Pages')->findOneBy(array('genre'=>'Page','actif'=>true,'ordre'=>1));
+        $slides = $em->getRepository('PagesBundle:Pages')->findBy(array('genre'=>'Slide','actif'=>true));
 
         if (!$page) throw $this->createNotFoundException('la page n\'�xiste pas');
 
-        return $this->render('PagesBundle:Default:pages/layout/pages.html.twig',array('page'=>$page,'slides'=>$slides) );
+        return $this->render('PagesBundle:Default:Pages/layout/pages.html.twig',array('page'=>$page,'slides'=>$slides) );
     }
 
 
     public function enteteAction($locale)
     {
         $em = $this->getDoctrine()->getManager();
-        $page = $em->getRepository('PagesBundle:Pages')->findOneBy(array('genre'=>'Entete', 'langue'=>$locale)); // ou findonebyslug
+        $page = $em->getRepository('PagesBundle:Pages')->findOneBy(array('genre'=>'Entete', 'langue'=>$locale, 'actif'=>true)); // ou findonebyslug
 
         if (!$page) throw $this->createNotFoundException('ENTETE EXISTE pas');
 
-        return $this->render('PagesBundle:Default:pages/modulesUsed/entete.html.twig',array('page'=>$page) );
+        return $this->render('PagesBundle:Default:Pages/modulesUsed/entete.html.twig',array('page'=>$page) );
     }
 }
