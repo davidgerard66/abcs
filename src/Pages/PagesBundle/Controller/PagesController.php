@@ -77,7 +77,7 @@ class PagesController extends Controller
 
     }
 
-    public function homeAction($locale)
+    public function homeAction($locale = "fr")
     {
         //return $this->redirect($this->generateUrl('adminPages', array('locale' => 'fr')));
 
@@ -85,7 +85,7 @@ class PagesController extends Controller
         $page = $em->getRepository('PagesBundle:Pages')->findOneBy(array('genre'=>'Page','actif'=>true,'ordre'=>1));
         $slides = $em->getRepository('PagesBundle:Pages')->findBy(array('genre'=>'Slide','actif'=>true));
 
-        if (!$page) throw $this->createNotFoundException('la page n\'�xiste pas');
+        if (!$page) throw $this->createNotFoundException('la page n\'éxiste pas');
 
         return $this->render('PagesBundle:Default:Pages/layout/pages.html.twig',array('page'=>$page,'slides'=>$slides) );
     }

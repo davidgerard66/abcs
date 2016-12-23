@@ -1,0 +1,161 @@
+<!DOCTYPE html>
+<html lang="fr"><head>
+<meta http-equiv="content-type" content="text/html; charset=UTF-8">
+<title>ABCS-SPAIN / Création de société en Espagne</title>
+<link href="asset/style.css" rel="stylesheet" type="text/css">
+<style>
+h6 {
+  font-family: 'Open Sans', 'Helvetica Neue', Arial, sans-serif;
+}
+body { margin: 0; background: #000;}
+video { 
+position: fixed;
+top: 50%;
+left: 50%;
+min-width: 100%;
+min-height: 100%;
+width: auto;
+height: auto;
+z-index: -100;
+-moz-transform: translateX(-50%) translateY(-50%);
+-ms-transform: translateX(-50%) translateY(-50%);
+-webkit-transform: translateX(-50%) translateY(-50%);
+transform: translateX(-50%) translateY(-50%);
+background: url('asset/fond.png') no-repeat; background-size: cover;  -webkit-transition: 1s opacity; transition: 1s opacity; }
+div { font-family: Agenda-Light, Agenda Light, Agenda, Arial Narrow, sans-serif;   
+font-weight: 100; background: rgba(0,0,0,0.48); color: white; padding: 2rem; width: 660px; margin: 2rem; float: right; font-size: 1.2rem; background-image:url(asset/fond.png); opacity:0.90 }
+h1 { font-size: 3rem; text-transform: uppercase; margin-top: 0; letter-spacing: .3rem; }
+a { display: inline-block; color: #fff; text-decoration: none; background: rgba(0,0,0,0.5); 
+padding: .5rem; -webkit-transition: .6s background; transition: .6s background; }
+a:hover { background: rgba(0,0,0,0.9); }
+.stopfade { opacity: .5; }
+#polina a { 
+  display: block;
+  width: 80%;
+  padding: .4rem;
+  border: none; 
+  margin: 1rem auto; 
+  font-size: 1.3rem;
+  background: rgba(255,255,255,0.40);
+  color: #fff;
+  border-radius: 3px; 
+  cursor: pointer;
+  -webkit-transition: .3s background;
+  transition: .3s background;
+  text-align:center;
+}
+#polina a:hover { 
+   background: rgba(0,0,0,0.5);
+}
+
+@media screen and (max-width: 500px) { 
+  div{width:70%;} 
+}
+@media all and (max-device-width: 800px) {
+  body { background: url("asset/fond.png") #000 no-repeat center center fixed; background-size: cover; }
+  #bgvid, #polina button { display: none; }
+  div{width:70%;} 
+}
+</style>
+
+<meta charset="utf-8">
+</head>
+<body>
+
+<video autoplay="autoplay"  poster="asset/fond.png" id="bgvid" muted="true" >
+
+<source src="asset/office.webm" type="video/webm" >
+<source src="asset/office.mp4" type="video/mp4" >
+<source src="asset/office.avi" type="video/avi" >
+
+</video> 
+
+
+<div id="polina">
+<h6 style='font-size:60px; line-height:60px;padding:2px;margin:0px;'>Centro de Negocio<br>
+  Marignane
+</h6>
+<p>
+</p><p style="max-height:340px; overflow:auto; font-size:14px;">
+Figueres est une ville proche de la France, reconnue pour la qualité de son mode de vie.<br>
+<br>
+De nombreux Clients ont choisi d'y implanter leur filiale, société, siège social ou centre logistique. <br>
+<br>
+Centro de Negocio Marignane, possède des bureaux équipés, accessibles à quelques minutes des gares et autoroute. <br>
+<br>
+Notre métier : <br>
+- La domiciliation commerciale, la domiciliation fiscale ou du siège social en Espagne. <br>
+<br>
+- Les formalités et les démarches de création de société, succursale, bureau de liaison ou de représentation, adresse secondaire ou de transfert de siège social. <br>
+<br>
+ - Une connexion Internet haut débit.<br>
+ <br>
+- Des téléphones IP reliés par le réseau 
+global de télécommunications  <br>
+- Une équipe d'assistanat à votre disposition pour répondre à vos besoins administratifs  <br>
+<br>
+- Un accès aux salles de réunions Pour le Créateur d'entreprise, CNM permet de démarrer l'activité, grâce à la domiciliation d'entreprise, sans supporter le coût d'une location permanente de bureau. <br>
+<br>
+Pour la Société déjà existante, CNM permet d'installer son siège ou une adresse secondaire en Espagne, renforçant ainsi la renommée de la Société. <br>
+<br>
+Choisir le centre d'affaires  c'est choisir : <br>
+- 3 mois GRATUITS de domiciliation au cours des 6 premiers mois, pour les créations    d'Entreprise de type SL, SLu. <br>
+<br>
+- un prix de domiciliation garanti SANS AUGMENTATION durant 36 mois.<br>
+- un tarif de domiciliation identique pour la restitution de votre courrier (frais de timbres non inclus). <br>
+<br>
+- des coûts réduits de fonctionnement pour votre Entreprise. <br>
+<br>
+- des services adaptés selon vos besoins : domiciliation commerciale, permanence    téléphonique, lignes téléphoniques transférées en France ou vers un autre pays sur un    téléphone fixe ou portable. <br>
+<br>
+- la solution aux inconvénients du Siège Social à votre domicile. <br>
+- un contrat de domiciliation commerciale reconnu par les organismes publics. Un service d'accueil, sourire compris, pour Vous et vos Interlocuteurs.<br>
+</p>
+<p>Rendez-vous dés à présent sur notre site Internet <br>
+dédié au développement de votre activité en Espagne
+  <a href="http:\\www.Entreprendre-en-Espagne.com">www.Entreprendre-en-Espagne.com</a></p>
+<p style="text-align:right"> C<span style="color:#777">entro</span>D<span style="color:#777">e</span>N<span style="color:#777">egocio</span>M<span style="color:#777">arignane</span></p>
+</div>
+<script>
+var video = document.getElementById("bgvid"),
+pauseButton = document.querySelector("#polina button");
+var ctr = 1;
+function vidFade() {
+  video.classList.add("stopfade");
+}
+
+video.addEventListener('ended', function()
+{
+// only functional if "loop" is removed 
+video.pause();
+vidFade();
+console.log("ok"+ctr)
+ctr++;
+document.querySelector("#bgvid > source").src = "asset/video"+ctr+".mp4"
+console.log("ok2"+ctr)
+if (ctr==2) {ctr=0}
+console.log(document.querySelector("#bgvid > source").src)
+video.load();
+video.play();
+}, false); 
+ 
+pauseButton.addEventListener("click", function() {
+  video.classList.toggle("stopfade");
+  if (video.paused) {
+    video.play();
+    pauseButton.innerHTML = "Pause";
+  } else {
+    video.pause();
+    pauseButton.innerHTML = "Paused";
+  }
+}, false);
+
+video.addEventListener('touchstart', function(e) {
+e.preventDefault();
+video.play();
+})
+
+</script>
+
+
+</body></html>

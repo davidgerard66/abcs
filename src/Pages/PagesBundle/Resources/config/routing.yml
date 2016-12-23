@@ -12,3 +12,7 @@ contact:
 home:
     pattern:  /page/{locale}/
     defaults: { _controller: PagesBundle:Pages:home }
+
+root:
+    pattern:  /
+    defaults: { _controller: PagesBundle:Pages:home }
