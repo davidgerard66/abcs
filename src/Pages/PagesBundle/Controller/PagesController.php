@@ -24,9 +24,13 @@ class PagesController extends Controller
         $page = $em->getRepository('PagesBundle:Pages')->findOneBy(array('slug'=>$slug,'actif'=>true)); // ou findonebyslug
         $slides = $em->getRepository('PagesBundle:Pages')->findBy(array('genre'=>'Slide','actif'=>true, 'langue'=>$locale)); // ou findonebyslug
 
+        $documentations = $em->getRepository('GitesBundle:Media')->findAll(); // ou findonebyslug
+
         if (!$page) throw $this->createNotFoundException('la page n\'�xiste pas');
 
-        return $this->render('PagesBundle:Default:Pages/layout/pages.html.twig',array('page'=>$page,'slides'=>$slides) );
+
+
+        return $this->render('PagesBundle:Default:Pages/layout/pages.html.twig',array('page'=>$page,'slides'=>$slides, 'documentations' => $documentations) );
     }
 
     public function contactAction($locale)
